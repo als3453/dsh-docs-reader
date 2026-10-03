@@ -2,7 +2,7 @@
 
 DSH 开发文档阅读器与知识图谱插件：在 DSH Web **左侧边栏**提供「开发文档」入口——目录树 + 文档阅读 + 检索 + 知识图谱。
 
-数据**动态读取运行环境中 dsh 仓库的 `docs/` 目录**（不随插件打包），仓库文档更新后重启 dsh web 即生效。
+数据**动态读取运行环境中 dsh 仓库的 `docs/` 目录与 `packages/preset/agent-preset/skills/` 技能库**（不随插件打包），仓库文档更新后重启 dsh web 即生效。
 
 ## 功能预览
 
@@ -73,13 +73,21 @@ plugin_manager → action: install_bundle → target: <插件包绝对路径>
 
 ## 数据源与配置
 
-插件默认读取**插件包所在仓库的 `docs/` 目录**。通过 `config.root` 可覆盖数据源路径（相对/绝对均可），在插件行的 patch 层或 profile 的 `cordis.patch.yml` 中配置：
+插件默认读取**插件包所在仓库的两个数据源**：
+
+| 数据源 | 默认路径 | 说明 |
+|---|---|---|
+| 开发文档 | `../../docs/` | 仓库 docs 目录（相对插件包） |
+| 技能库 | `../../packages/preset/agent-preset/skills/` | 内置 Skill 文档（SKILL.md + references） |
+
+通过 `config.root` / `config.skillsRoot` 可覆盖数据源路径（相对/绝对均可），在插件行的 patch 层或 profile 的 `cordis.patch.yml` 中配置：
 
 ```yaml
 - override:
     - id: dsh-docs-reader
       config:
         root: /path/to/deepseek-harness/docs
+        skillsRoot: /path/to/deepseek-harness/packages/preset/agent-preset/skills
 ```
 
 ## 兼容性说明
