@@ -51,11 +51,13 @@ dsh plugin --profile <name> add github:als3453/dsh-docs-reader
 
 插件为纯 JavaScript、无构建脚本，git 安装即用，无需 pnpm 构建授权。安装后重启 dsh web。
 
-### 方式 B：本地源码路径（开发中）
+### 方式 B：本地路径安装（适合离线 / 手动安装）
 
 ```
 dsh plugin --profile <name> add link:<仓库绝对路径>/custom-plugins/dsh-docs-reader
 ```
+
+从 GitHub 下载 ZIP 解压后，将解压路径填入 `<仓库绝对路径>` 即可；开发调试本地插件也走此方式。
 
 ### 方式 C：DSH 内 install_bundle
 
