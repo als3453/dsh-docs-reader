@@ -46,7 +46,7 @@ dsh-docs-reader/
 ### 方式 A：从 GitHub 安装（推荐）
 
 ```
-dsh plugin --profile <name> add github:als3453/dsh-docs-reader
+dsh plugin --profile web add github:als3453/dsh-docs-reader
 ```
 
 插件为纯 JavaScript、无构建脚本，git 安装即用，无需 pnpm 构建授权。安装后重启 dsh web。
@@ -54,10 +54,10 @@ dsh plugin --profile <name> add github:als3453/dsh-docs-reader
 ### 方式 B：本地路径安装（适合离线 / 手动安装）
 
 ```
-dsh plugin --profile <name> add link:<仓库绝对路径>/custom-plugins/dsh-docs-reader
+dsh plugin --profile web add link:D:\path\to\dsh-docs-reader
 ```
 
-从 GitHub 下载 ZIP 解压后，将解压路径填入 `<仓库绝对路径>` 即可；开发调试本地插件也走此方式。
+从 GitHub 下载 ZIP 解压后，将解压路径填入 `link:` 后即可；开发调试本地插件也走此方式。
 
 ### 方式 C：DSH 内 install_bundle
 
@@ -68,6 +68,8 @@ plugin_manager → action: install_bundle → target: <插件包绝对路径>
 ```
 
 安装后确认行激活（`application: applied`），侧边栏底部出现「开发文档」入口。
+
+> **备注**：以上命令中的 `web` 是 DSH 最常用的 profile 名。如果你的环境 profile 名不是 `web`（可用 `dsh profile list` 查看），把命令中的 `web` 换成你自己的 profile 名即可。
 
 ## 数据源与配置
 
