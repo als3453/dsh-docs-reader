@@ -1,0 +1,4 @@
+- insert:
+    - id: dsh-docs-reader
+      name: 'dsh-docs-reader'
+      config: {}

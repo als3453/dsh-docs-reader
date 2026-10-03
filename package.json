@@ -1,0 +1,40 @@
+{
+  "name": "dsh-docs-reader",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "DSH 开发文档阅读器与知识图谱: 在侧边栏提供仓库 docs 目录的文档浏览、检索与关系图谱。",
+  "keywords": [
+    "dsh",
+    "deepseek",
+    "plugin",
+    "docs",
+    "documentation",
+    "knowledge-graph"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "icon.svg",
+    "cordis.patch.yml",
+    "locale/*.json"
+  ],
+  "icon": "./icon.svg",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-api-gateway"
+      ]
+    }
+  }
+}
