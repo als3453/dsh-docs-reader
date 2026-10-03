@@ -54,10 +54,10 @@ dsh plugin --profile web add github:als3453/dsh-docs-reader
 ### 方式 B：本地路径安装（适合离线 / 手动安装）
 
 ```
-dsh plugin --profile web add link:D:\path\to\dsh-docs-reader
+dsh plugin --profile web add link:<解压路径>
 ```
 
-从 GitHub 下载 ZIP 解压后，将解压路径填入 `link:` 后即可；开发调试本地插件也走此方式。
+从 GitHub 下载 ZIP 解压后，将解压后的文件夹路径填入 `<解压路径>`（例如 `D:\Downloads\dsh-docs-reader`）；开发调试本地插件也走此方式。
 
 ### 方式 C：DSH 内 install_bundle
 
